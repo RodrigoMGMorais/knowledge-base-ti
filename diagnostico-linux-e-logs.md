@@ -91,7 +91,8 @@ Explicação: Permite mapear por quais diretórios o operador navegou recentemen
 ### O "Workflow" do Analista de Elite:
 Sintoma: O sistema está lento.
 
-Passo 1 (Recursos): 💻 htop 
+Passo 1 (Recursos):
+-  💻 htop 
 (verificar se é CPU ou RAM).
 
 Passo 2 (Kernel): 💻 dmesg -T 
