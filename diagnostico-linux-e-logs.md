@@ -93,7 +93,7 @@ Sintoma: O sistema está lento.
 
 Passo 1 (Recursos):
 -  💻 htop 
-(verificar se é CPU ou RAM).
+= (verificar se é CPU ou RAM).
 
 Passo 2 (Kernel): 💻 dmesg -T 
 (verificar se o kernel matou algum processo por falta de memória).
