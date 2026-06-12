@@ -11,11 +11,11 @@ auditoria de comandos, análise de logs em tempo real e verificação de saúde 
 - A visão em tempo real. O htop é preferido por ser mais intuitivo (permite filtrar e ordenar por memória ou CPU facilmente).
 
 💻 vmstat 1
-Excelente para verificar se o sistema está fazendo swapping (troca de memória para disco).
+- Excelente para verificar se o sistema está fazendo swapping (troca de memória para disco).
 Se a coluna si e so não estiverem zeradas, seu servidor está com pouca memória RAM.
 
 💻 iostat -xz 1
-O melhor comando para diagnosticar gargalos em disco. Verifique a coluna %util: se estiver próxima de 100%, seu disco é o gargalo.
+- O melhor comando para diagnosticar gargalos em disco. Verifique a coluna %util: se estiver próxima de 100%, seu disco é o gargalo.
 
 💻 free -m
 Visualização rápida da memória RAM livre, usada e em cache.
