@@ -5,10 +5,10 @@ auditoria de comandos, análise de logs em tempo real e verificação de saúde 
 
 ---------------------------------------------
 ### Consumo de Recursos (CPU, Memória, I/O):
-Estes comandos revelam gargalos imediatos.
+- Estes comandos revelam gargalos imediatos.
 
 💻 top / htop 
-A visão em tempo real. O htop é preferido por ser mais intuitivo (permite filtrar e ordenar por memória ou CPU facilmente).
+- A visão em tempo real. O htop é preferido por ser mais intuitivo (permite filtrar e ordenar por memória ou CPU facilmente).
 
 💻 vmstat 1
 Excelente para verificar se o sistema está fazendo swapping (troca de memória para disco).
