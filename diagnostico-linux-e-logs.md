@@ -18,10 +18,10 @@ Se a coluna si e so não estiverem zeradas, seu servidor está com pouca memóri
 - O melhor comando para diagnosticar gargalos em disco. Verifique a coluna %util: se estiver próxima de 100%, seu disco é o gargalo.
 
 💻 free -m
-Visualização rápida da memória RAM livre, usada e em cache.
+- Visualização rápida da memória RAM livre, usada e em cache.
 
 💻 sar (Sysstat)
-O "caixa preta" do Linux. O comando sar -u (CPU) ou sar -r (Memória) permite ver o histórico de uso ao longo do dia, 
+-  "caixa preta" do Linux. O comando sar -u (CPU) ou sar -r (Memória) permite ver o histórico de uso ao longo do dia, 
 não apenas o momento atual.
 
 ---------------------------------------------------
@@ -29,45 +29,45 @@ não apenas o momento atual.
 Onde a verdade está escondida.
 
 💻 journalctl -u <serviço> -xe
-Fundamental para sistemas baseados em systemd. O -e pula para o final, e o -x traz explicações adicionais sobre o erro.
+- Fundamental para sistemas baseados em systemd. O -e pula para o final, e o -x traz explicações adicionais sobre o erro.
 
 💻 tail -f /var/log/<arquivo>
-O padrão para acompanhar logs em tempo real. 
+- O padrão para acompanhar logs em tempo real. 
 Dica: use com grep para filtrar apenas o que importa: 💻 tail -f /var/log/syslog | grep -i "error".
 
 💻 dmesg -T | tail -n 50 
-Verifica as mensagens do kernel. Problemas de hardware, travamento de driver ou Out of Memory Killer (OOM) aparecem aqui.
+- Verifica as mensagens do kernel. Problemas de hardware, travamento de driver ou Out of Memory Killer (OOM) aparecem aqui.
 
 💻 /var/log/syslog ou /var/log/messages
-O repositório central de eventos do sistema.
+- O repositório central de eventos do sistema.
 
 ---------------------------------------------------
 ### Conectividade e Redes (Conflitos e Portas)
 Para problemas onde a aplicação não responde ou está "perdendo" conexões.
 
 💻 ss -tulpn 
-Substitui o antigo netstat. Mostra quais portas estão abertas e qual processo (PID) está "ouvindo" em cada uma.
+- Substitui o antigo netstat. Mostra quais portas estão abertas e qual processo (PID) está "ouvindo" em cada uma.
 
 💻 tcpdump -i any port 80
-Para análise profunda de tráfego. Essencial para verificar se o pacote está chegando ao servidor ou sendo bloqueado pelo firewall.
+- Para análise profunda de tráfego. Essencial para verificar se o pacote está chegando ao servidor ou sendo bloqueado pelo firewall.
 
 💻 mtr <destino> 
-Uma mistura de ping e traceroute. Mostra em qual salto (hop) da rede a perda de pacotes ou latência está ocorrendo.
+- Uma mistura de ping e traceroute. Mostra em qual salto (hop) da rede a perda de pacotes ou latência está ocorrendo.
 
 ---------------------------------------------------
 ### Análise de Processos e Conflitos
 Quando um processo trava ou causa lentidão extrema.
 
 💻 strace -p <PID> 
-O comando dos especialistas. Ele intercepta as chamadas de sistema (syscalls) do processo. 
+- O comando dos especialistas. Ele intercepta as chamadas de sistema (syscalls) do processo. 
 Se um programa está "travado" aguardando um arquivo ou rede, o strace vai te mostrar exatamente em qual linha o sistema 
 operacional está esperando.
 
 💻 lsof -p <PID>
-Lista todos os arquivos que um processo específico está mantendo abertos. Vital para diagnosticar vazamento de file descriptors.
+- Lista todos os arquivos que um processo específico está mantendo abertos. Vital para diagnosticar vazamento de file descriptors.
 
 💻 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
-Lista os processos que mais consomem recursos, ordenados pelo uso de CPU.
+- Lista os processos que mais consomem recursos, ordenados pelo uso de CPU.
 
 ---------------------------------------------------
 ## 🕒 1. O Poder do Histórico (`history` + `grep`)
@@ -76,14 +76,14 @@ O histórico é a sua primeira linha de diagnóstico.
 
 ### Buscar um termo específico no histórico
 💻 history | grep "termo_que_voce_quer_buscar"
-Exemplo Prático: Para recuperar a sintaxe exata daquele comando complexo que você esqueceu:
+- Exemplo Prático: Para recuperar a sintaxe exata daquele comando complexo que você esqueceu:
 💻 history | grep "log_erros"
 
-Filtrar os últimos 10 usos de um comando específico.
+- Filtrar os últimos 10 usos de um comando específico.
 Explicação: Filtra todas as ocorrências do comando informado e exibe apenas as 10 últimas linhas, evitando poluir a tela do terminal.
 💻 history | grep "tail" | tail -n 10
 
-Rastrear navegação ou uso de ferramentas.
+- Rastrear navegação ou uso de ferramentas.
 Explicação: Permite mapear por quais diretórios o operador navegou recentemente durante uma sessão de troubleshooting.
 💻 history | grep "cd"
 
