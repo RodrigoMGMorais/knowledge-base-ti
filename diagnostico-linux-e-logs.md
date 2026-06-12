@@ -95,16 +95,16 @@ Passo 1 (Recursos):
 -  💻 htop 
 = (verificar se é CPU ou RAM).
 
-- Passo 2 (Kernel):
-💻 dmesg -T 
+Passo 2 (Kernel):
+- 💻 dmesg -T 
 = (verificar se o kernel matou algum processo por falta de memória).
 
-- Passo 3 (Logs):
-  💻 journalctl -u <app> -n 100 
+Passo 3 (Logs):
+ - 💻 journalctl -u <app> -n 100 
 = (verificar o erro específico na aplicação).
 
-- Passo 4 (Deep Dive):
-  💻 strace 
+Passo 4 (Deep Dive):
+- 💻 strace 
 = (ver o comportamento interno do processo se o erro persistir).
 
 ### Dica final: 
