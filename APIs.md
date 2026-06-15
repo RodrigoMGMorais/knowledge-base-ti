@@ -77,7 +77,7 @@ Para criar uma API eficiente, utilize os métodos HTTP corretos para cada ação
 | **DELETE** | Delete (Deletar)| Remove um recurso do servidor. | `/v1/produtos/42` |
 
 
-### 🛠️ Comando GET via promt
+### 🛠️ Comando GET via prompt
 curl -X GET https://jsonplaceholder.typicode.com/todos/1
 
 ---
