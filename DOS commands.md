@@ -82,7 +82,7 @@ do Visualizador de Eventos em auditorias ou triagens rápidas de falhas de hardw
 (ex: `net stop wuauserv` para reiniciar o serviço do Windows Update que travou).
 
 ---------------
-###AGORA OS COMANDOS MENOS CONHECIDOS (AVANÇADOS DE ELITE):
+### AGORA OS COMANDOS MENOS CONHECIDOS (AVANÇADOS DE ELITE):
 
 Como especialista em infraestrutura e sistemas, entendo que você busca o nível mais profundo de controle do Windows, além do básico de administração. Estes comandos de "Elite" são ferramentas de baixo nível que manipulam o comportamento do kernel, o subsistema de 
 rede e a configuração profunda do hardware, operando muitas vezes abaixo da camada de interface gráfica.
