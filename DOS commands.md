@@ -113,4 +113,4 @@ rede e a configuração profunda do hardware, operando muitas vezes abaixo da ca
 
 Para automatizar isso, você pode criar um **script `.bat**` que encapsula esses diagnósticos. Um analista que executa `powercfg /energy` seguido de `fsutil` em um servidor lento, demonstra uma capacidade de diagnóstico que vai muito além da média.
 
-Qual desses caminhos — **ajustes de performance de disco** ou **estabilidade de pilha de rede** — você sente que é o gargalo mais comum no seu ambiente de trabalho hoje? Isso me ajuda a direcionar qual dessas "ferramentas de elite" você deve aplicar primeiro para ver resultados imediatos.
+Qual desses caminhos — **ajustes de performance de disco** ou **estabilidade de pilha de rede** — você sente que é o gargalo mais comum no seu ambiente de trabalho hoje?
