@@ -129,10 +129,8 @@ curl -i -X GET https://jsonplaceholder.typicode.com/todos/1
 
 💡 Por que isso ajuda? Ao usar o -i, o terminal exibirá HTTP/1.1 200 OK (ou outros códigos como 404, 500) antes do conteúdo. Isso é o que você usará para provar para um desenvolvedor ou para o time de infraestrutura que o problema é no servidor deles e não na sua requisição.
 
-Dica de organização: Copie esses exemplos e organize-os no seu arquivo APIs.md dentro de uma tabela ou blocos de código bem destacados. Isso mostrará a qualquer um que ler o seu repositório que você sabe testar o ciclo completo de vida de uma integração!
+
 --------------------------------------------------
-
-
 ---
 
 ## 3. Estruturando o JSON (O Contrato)
