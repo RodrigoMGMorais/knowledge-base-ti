@@ -80,7 +80,6 @@ Para criar uma API eficiente, utilize os métodos HTTP corretos para cada ação
 ### 🛠️ Comando GET via prompt 💡
 curl -X GET https://jsonplaceholder.typicode.com/todos/1
 
-💡
 
 ---
 
