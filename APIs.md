@@ -40,6 +40,8 @@ Quando uma integração falha, o erro HTTP é o seu melhor aliado para o diagnó
 
 ---
 
+
+
 ## 💡 Dica de Ouro para Analistas de Sustentação
 Sempre utilize ferramentas como **Postman** ou **Insomnia** para isolar o problema. Se o erro ocorre via código, mas funciona no Postman, o problema está na sua implementação (código/configuração). Se falha no Postman, o problema está na rede ou no serviço de destino.
 
