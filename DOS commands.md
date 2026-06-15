@@ -81,3 +81,36 @@ do Visualizador de Eventos em auditorias ou triagens rápidas de falhas de hardw
 * **`net start` e `net stop <nome do serviço>**`: Inicia ou para serviços do Windows diretamente pela linha de comando 
 (ex: `net stop wuauserv` para reiniciar o serviço do Windows Update que travou).
 
+---------------
+###AGORA OS COMANDOS MENOS CONHECIDOS (AVANÇADOS DE ELITE):
+
+Como especialista em infraestrutura e sistemas, entendo que você busca o nível mais profundo de controle do Windows, além do básico de administração. Estes comandos de "Elite" são ferramentas de baixo nível que manipulam o comportamento do kernel, o subsistema de 
+rede e a configuração profunda do hardware, operando muitas vezes abaixo da camada de interface gráfica.
+
+**Aviso:** Execute estes comandos apenas como **Administrador** e com total consciência, pois alguns possuem poder para reconfigurar ou limpar estruturas críticas do sistema.
+
+### 🛠️ Comandos de Elite (Infraestrutura e Kernel)
+
+* **`fsutil behavior query mftzone`**: Este comando revela o nível de agressividade com que o sistema reserva espaço para a MFT (*Master File Table*). Em servidores de alto tráfego com muitos arquivos pequenos, ajustar isso (`fsutil behavior set mftzone 2`) pode evitar a fragmentação crítica da estrutura de arquivos do disco.
+* **`powercfg /energy`**: Pouquíssimos analistas usam este comando. Ele analisa a eficiência energética de todo o SO por 60 segundos, gerando um relatório HTML detalhado que lista gargalos de hardware, drivers que impedem o modo *sleep* e dispositivos mal configurados que drenam energia desnecessariamente.
+* **`compact /compactos:always`**: Se você estiver em um ambiente de servidores ou estações com SSDs de baixa capacidade, este comando comprime os arquivos do sistema operacional usando o algoritmo de compressão de alto desempenho do Windows 10/11 sem perda de performance perceptível, liberando vários gigabytes instantaneamente.
+* **`schtasks /query /fo LIST /v`**: Não apenas lista tarefas, este comando exibe detalhes "ocultos" de todas as tarefas agendadas, incluindo as que foram criadas por *malwares* ou processos de sistema invisíveis ao Agendador de Tarefas gráfico (Task Scheduler).
+
+### 🌐 Comandos de Elite (Redes e Conectividade Profunda)
+
+* **`netsh int tcp show global`**: Revela o estado da "Janela de Recepção" (*Receive Window Auto-Tuning*). Em redes corporativas com alta latência, desativar isso (`netsh int tcp set global autotuninglevel=disabled`) pode resolver problemas intermitentes de conexão lenta em sistemas legados.
+* **`netsh winsock reset`**: O comando de "última instância" para quando a pilha de rede TCP/IP do Windows corrompe (comum após remoção de antivírus intrusivos ou VPNs bugadas). Ele reseta completamente o catálogo Winsock, restaurando a conectividade base.
+* **`nbtstat -R`**: Purga e recarrega a tabela de nomes NetBIOS do cache local. É a solução "oculta" para problemas onde máquinas Windows não se enxergam na rede local apesar de terem o IP correto.
+
+### 🛡️ Auditoria e Gerenciamento Oculto
+
+* **`robocopy C:\origem D:\destino /E /COPYALL /DCOPY:T /R:3 /W:5 /LOG:log.txt`**: Muito além de uma simples cópia, o `robocopy` é a ferramenta de elite para migrações. O parâmetro `/COPYALL` copia todas as permissões NTFS, dono e informações de auditoria, garantindo que a estrutura de permissões seja preservada exatamente como no original.
+* **`reagentc /info`**: Comando para diagnosticar o status do Ambiente de Recuperação do Windows (WinRE). Se um servidor ou estação não entra em modo de recuperação, este comando informa se o arquivo `.wim` de recuperação está corrompido ou desabilitado.
+
+---
+
+### 🚀 O "Pulo do Gato" para um Analista
+
+Para automatizar isso, você pode criar um **script `.bat**` que encapsula esses diagnósticos. Um analista que executa `powercfg /energy` seguido de `fsutil` em um servidor lento, demonstra uma capacidade de diagnóstico que vai muito além da média.
+
+Qual desses caminhos — **ajustes de performance de disco** ou **estabilidade de pilha de rede** — você sente que é o gargalo mais comum no seu ambiente de trabalho hoje? Isso me ajuda a direcionar qual dessas "ferramentas de elite" você deve aplicar primeiro para ver resultados imediatos.
