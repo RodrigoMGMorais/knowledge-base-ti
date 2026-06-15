@@ -77,13 +77,10 @@ Para criar uma API eficiente, utilize os métodos HTTP corretos para cada ação
 | **DELETE** | Delete (Deletar)| Remove um recurso do servidor. | `/v1/produtos/42` |
 
 
-### 🛠️ Comando GET via prompt
+### 🛠️ Comando GET via prompt 💡
 curl -X GET https://jsonplaceholder.typicode.com/todos/1
 
-💡 Dica para o seu arquivo:
-Adicione esse link como um item de "Recursos Recomendados" no final do seu arquivo APIs.md. Isso demonstra que você é um analista preocupado em compartilhar ferramentas que aceleram o desenvolvimento e o diagnóstico do time.
-
-Você quer que eu te ajude a gerar um exemplo de comando POST que você pode colocar nesse mesmo arquivo para mostrar como enviar dados para essa API de teste?
+💡
 
 ---
 
