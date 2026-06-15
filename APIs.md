@@ -80,6 +80,58 @@ Para criar uma API eficiente, utilize os métodos HTTP corretos para cada ação
 ### 🛠️ Comando GET via prompt 💡
 curl -X GET https://jsonplaceholder.typicode.com/todos/1
 
+Para dominar o teste de APIs via terminal (o que chamamos de CLI Testing), o curl é a sua ferramenta principal. Como você já aprendeu a consultar (GET), agora vamos explorar os outros verbos que permitem criar, alterar e deletar dados.
+
+Use estes exemplos no seu arquivo APIs.md para criar uma seção de "Comandos Avançados de Teste":
+
+🚀 Comandos Avançados com curl
+Para todos os comandos abaixo, vamos utilizar o JSONPlaceholder como alvo.
+
+1. Criando um novo dado (POST)
+O POST é usado para enviar informações. Note o uso do parâmetro -H para definir o tipo de conteúdo como JSON.
+
+curl -X POST https://jsonplaceholder.typicode.com/posts \
+     -H "Content-Type: application/json" \
+     -d '{"title": "Teste de API", "body": "Aprendendo a usar curl", "userId": 1}'
+
+--------------------------------------------------     
+O que faz: Envia um novo registro. O servidor responderá com o ID do objeto criado.
+
+2. Atualizando um dado existente (PUT)
+O PUT substitui um recurso completo.
+
+curl -X PUT https://jsonplaceholder.typicode.com/posts/1 \
+     -H "Content-Type: application/json" \
+     -d '{"id": 1, "title": "Título Alterado", "body": "Conteúdo modificado", "userId": 1}'
+
+--------------------------------------------------
+3. Atualizando apenas um campo (PATCH)
+Diferente do PUT, o PATCH altera apenas o que você especificar.
+
+curl -X PATCH https://jsonplaceholder.typicode.com/posts/1 \
+     -H "Content-Type: application/json" \
+     -d '{"title": "Apenas o Título mudou"}'
+
+--------------------------------------------------
+4. Removendo um registro (DELETE)
+O teste clássico para garantir que sua API consegue remover recursos.
+
+curl -X DELETE https://jsonplaceholder.typicode.com/posts/1
+
+--------------------------------------------------
+💡 Pulo do Gato: Analisando o "Header" (Cabeçalho)
+Se você quer ser um analista sênior de sustentação, você não olha apenas o resultado (o JSON), você olha o cabeçalho da resposta para saber se o servidor está saudável.
+
+Adicione o parâmetro -i (ou -v para verboso) em qualquer comando:
+
+curl -i -X GET https://jsonplaceholder.typicode.com/todos/1
+
+
+💡 Por que isso ajuda? Ao usar o -i, o terminal exibirá HTTP/1.1 200 OK (ou outros códigos como 404, 500) antes do conteúdo. Isso é o que você usará para provar para um desenvolvedor ou para o time de infraestrutura que o problema é no servidor deles e não na sua requisição.
+
+Dica de organização: Copie esses exemplos e organize-os no seu arquivo APIs.md dentro de uma tabela ou blocos de código bem destacados. Isso mostrará a qualquer um que ler o seu repositório que você sabe testar o ciclo completo de vida de uma integração!
+--------------------------------------------------
+
 
 ---
 
