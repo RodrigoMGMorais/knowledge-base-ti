@@ -5,7 +5,7 @@ formato JSON. O objetivo é fornecer uma base sólida e 100% eficiente para o de
 
 ---
 
-## 1. O que é uma API na Prática?
+### 1. O que é uma API na Prática?
 
 Uma API (Application Programming Interface) é um **contrato** entre dois sistemas. Pense nela como um garçom: 
 você (o cliente) faz um pedido (Requisição), o garçom leva até a cozinha (Servidor) e traz o seu prato pronto (Resposta).
